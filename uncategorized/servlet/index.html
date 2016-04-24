@@ -4,17 +4,40 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Hexo</title>
+  <title>servlet原理分析 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="build things">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="##1、servlet的体系架构serlvet 的这套东西大概如下图，这些是基本的东西 。HttpSerlvet，HttpServletRequest 这些扩展的东西就没有放到这里了。
+
+这些接口是干什么用的呢：
+
+ServletRequest：规定了获取请求相关信息的接口，由容器实现。
+ServletResponse : 由容器实现，提供了相关响应请求的接口。
+ServletConfig：由we">
+<meta property="og:type" content="article">
+<meta property="og:title" content="servlet原理分析">
+<meta property="og:url" content="http://yoursite.com/uncategorized/servlet/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="build things">
+<meta property="og:description" content="##1、servlet的体系架构serlvet 的这套东西大概如下图，这些是基本的东西 。HttpSerlvet，HttpServletRequest 这些扩展的东西就没有放到这里了。
+
+这些接口是干什么用的呢：
+
+ServletRequest：规定了获取请求相关信息的接口，由容器实现。
+ServletResponse : 由容器实现，提供了相关响应请求的接口。
+ServletConfig：由we">
+<meta property="og:image" content="http://img.blog.csdn.net/20160311120408436">
+<meta property="og:image" content="http://img.blog.csdn.net/20160311143301535">
+<meta property="og:image" content="http://img.blog.csdn.net/20160311151404995">
+<meta property="og:updated_time" content="2016-04-24T13:39:39.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="build things">
+<meta name="twitter:title" content="servlet原理分析">
+<meta name="twitter:description" content="##1、servlet的体系架构serlvet 的这套东西大概如下图，这些是基本的东西 。HttpSerlvet，HttpServletRequest 这些扩展的东西就没有放到这里了。
+
+这些接口是干什么用的呢：
+
+ServletRequest：规定了获取请求相关信息的接口，由容器实现。
+ServletResponse : 由容器实现，提供了相关响应请求的接口。
+ServletConfig：由we">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20160311120408436">
   
   
     <link rel="icon" href="/favicon.png">
@@ -157,9 +180,7 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
-  
-    <article id="post-servlet" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-servlet" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/uncategorized/servlet/" class="article-date">
@@ -175,12 +196,19 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/uncategorized/servlet/">servlet原理分析</a>
+    <h1 class="article-title" itemprop="name">
+      servlet原理分析
     </h1>
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -246,16 +274,19 @@
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/uncategorized/abde/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">abde</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -266,61 +297,6 @@
 
 
 
-
-  
-    <article id="post-abde" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/uncategorized/abde/" class="article-date">
-  	<time datetime="2016-04-24T04:02:30.000Z" itemprop="datePublished">2016-04-24</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/uncategorized/abde/">abde</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-  
 </div>
       <footer id="footer">
   <div class="outer">
@@ -344,8 +320,8 @@
 		fancybox: true,
 		mathjax: true,
 		animate: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
