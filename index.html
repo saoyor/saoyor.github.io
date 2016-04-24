@@ -70,7 +70,7 @@
 						<li>Tags</li>
 						
 						
-						<li>Über</li>
+						<li>About</li>
 						
 					</ul>
 				</div>
@@ -162,7 +162,7 @@
     <article id="post-servlet" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/uncategorized/servlet/" class="article-date">
+      <a href="/java/servlet/" class="article-date">
   	<time datetime="2016-04-24T04:02:30.000Z" itemprop="datePublished">2016-04-24</time>
 </a>
     </div>
@@ -176,7 +176,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/uncategorized/servlet/">servlet原理分析</a>
+      <a class="article-title" href="/java/servlet/">servlet原理分析</a>
     </h1>
   
 
@@ -185,8 +185,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1、servlet的体系架构"><a href="#1、servlet的体系架构" class="headerlink" title="1、servlet的体系架构"></a>1、servlet的体系架构</h2><hr>
-<p>serlvet 的这套东西大概如下图，这些是基本的东西 。HttpSerlvet，HttpServletRequest 这些扩展的东西就没有放到这里了。</p>
+        <h2 id="1、servlet的体系架构"><a href="#1、servlet的体系架构" class="headerlink" title="1、servlet的体系架构"></a>1、servlet的体系架构</h2><p>serlvet 的这套东西大概如下图，这些是基本的东西 。HttpSerlvet，HttpServletRequest 这些扩展的东西就没有放到这里了。</p>
 <p><img src="http://img.blog.csdn.net/20160311120408436" alt="tomcat 架构中 servlet的类关系图"></p>
 <p>这些接口是干什么用的呢：</p>
 <ul>
@@ -198,8 +197,7 @@
 </ul>
 <p>相关Servlet的接口说明可以看</p>
 <p><a href="http://tomcat.apache.org/tomcat-5.5-doc/servletapi/javax/servlet/" target="_blank" rel="external">http://tomcat.apache.org/tomcat-5.5-doc/servletapi/javax/servlet/</a></p>
-<h2 id="2、serlvet和web容器协同工作流程"><a href="#2、serlvet和web容器协同工作流程" class="headerlink" title="2、serlvet和web容器协同工作流程"></a>2、serlvet和web容器协同工作流程</h2><hr>
-<p>工作流程大致如下：</p>
+<h2 id="2、serlvet和web容器协同工作流程"><a href="#2、serlvet和web容器协同工作流程" class="headerlink" title="2、serlvet和web容器协同工作流程"></a>2、serlvet和web容器协同工作流程</h2><p>工作流程大致如下：</p>
 <ol>
 <li>初始化环境: 根据context.xml的配置 进行初始化 （这个时候就会实例化一个ServletContext）</li>
 <li>加载web.xml 根据web.xml描述初始化相关组件</li>
@@ -240,8 +238,7 @@
 </li>
 </ul>
 </blockquote>
-<p>##4、web.xml</p>
-<p>web.xml 是用来配置业务组件的，容器启动的时候会加载这份web.xml去指导容器初始化相关组件。</p>
+<h2 id="4、web-xml"><a href="#4、web-xml" class="headerlink" title="4、web.xml"></a>4、web.xml</h2><p>web.xml 是用来配置业务组件的，容器启动的时候会加载这份web.xml去指导容器初始化相关组件。</p>
 <p>下面是一份用来测试的web.xml</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">&lt;web-app&gt;</span><br><span class="line"></span><br><span class="line">    &lt;display-name&gt;Archetype Created Web Application&lt;/display-name&gt;</span><br><span class="line"></span><br><span class="line">    &lt;description&gt;用了测试servlet 相关功能&lt;/description&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;!-- 过滤器配置  过滤器是会运行在请求之前 和 响应之后的--&gt;</span><br><span class="line">    &lt;!-- 过滤器在 文档中的位置一定要在servlet的配置之前--&gt;</span><br><span class="line">    &lt;filter&gt;</span><br><span class="line">        &lt;filter-name&gt;requestfilter&lt;/filter-name&gt;</span><br><span class="line">        &lt;filter-class&gt;com.soyor.servlet.filter.RequestFilter&lt;/filter-class&gt;</span><br><span class="line">    &lt;/filter&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 配置过滤哪些 servlet --&gt;</span><br><span class="line">    &lt;filter-mapping&gt;</span><br><span class="line">        &lt;filter-name&gt;requestfilter&lt;/filter-name&gt;</span><br><span class="line">        &lt;servlet-name&gt;Hello&lt;/servlet-name&gt;</span><br><span class="line">    &lt;/filter-mapping&gt;</span><br><span class="line">    &lt;!-- 过滤器同样可以对请求路径起作用--&gt;</span><br><span class="line">    &lt;filter-mapping&gt;</span><br><span class="line">        &lt;filter-name&gt;requestfilter&lt;/filter-name&gt;</span><br><span class="line">        &lt;url-pattern&gt;/test&lt;/url-pattern&gt;</span><br><span class="line">    &lt;/filter-mapping&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;!-- 定义servlet--&gt;</span><br><span class="line">    &lt;servlet&gt;</span><br><span class="line">        &lt;servlet-name&gt;Hello&lt;/servlet-name&gt;</span><br><span class="line">        &lt;servlet-class&gt;com.soyor.servlet.HelloController&lt;/servlet-class&gt;</span><br><span class="line">        &lt;!-- servlet的初始化变量 --&gt;</span><br><span class="line">        &lt;init-param&gt;</span><br><span class="line">            &lt;param-name&gt;abc&lt;/param-name&gt;</span><br><span class="line">            &lt;param-value&gt;123&lt;/param-value&gt;</span><br><span class="line">        &lt;/init-param&gt;</span><br><span class="line">        &lt;!-- servlet的加载的优先级  &lt;0 的时候 启动不加载--&gt;</span><br><span class="line">        &lt;load-on-startup&gt;2&lt;/load-on-startup&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/servlet&gt;</span><br><span class="line"></span><br><span class="line">    &lt;servlet&gt;</span><br><span class="line">        &lt;servlet-name&gt;test&lt;/servlet-name&gt;</span><br><span class="line">        &lt;servlet-class&gt;com.soyor.servlet.TestController&lt;/servlet-class&gt;</span><br><span class="line">        &lt;load-on-startup&gt;3&lt;/load-on-startup&gt;</span><br><span class="line">    &lt;/servlet&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;servlet-mapping&gt;</span><br><span class="line">        &lt;servlet-name&gt;Hello&lt;/servlet-name&gt;</span><br><span class="line">        &lt;url-pattern&gt;/Hello&lt;/url-pattern&gt;</span><br><span class="line">    &lt;/servlet-mapping&gt;</span><br><span class="line"></span><br><span class="line">    &lt;servlet-mapping&gt;</span><br><span class="line">        &lt;servlet-name&gt;test&lt;/servlet-name&gt;</span><br><span class="line">        &lt;url-pattern&gt;/test&lt;/url-pattern&gt;</span><br><span class="line">    &lt;/servlet-mapping&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;/web-app&gt;</span><br></pre></td></tr></table></figure>
 <p>web.xml 相关元素说明</p>
@@ -351,6 +348,10 @@
       
       
       
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/java/">java</a>
+	</div>
+
 
       
       <div class="clearfix"></div>
